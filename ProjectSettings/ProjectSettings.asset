@@ -136,7 +136,11 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 2277025265738811083, guid: 2b2844ff40d95e04b8fe89f444c89d75, type: 2}
+  - {fileID: 11400000, guid: fa199e5856f49c447969733948495629, type: 2}
+  - {fileID: 11400000, guid: a0867461f29351e4497eb764067c5606, type: 2}
+  - {fileID: 2495847918078664782, guid: 3ea1cf0659ee88541a42fad0befecc7c, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -792,7 +796,7 @@ PlayerSettings:
   webGLTemplate: PROJECT:WebXR2020
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 1
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
