@@ -854,10 +854,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1434975002}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSwitchedFromVR:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2057198443}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1434975002}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -15452,6 +15476,11 @@ PrefabInstance:
       objectReference: {fileID: 1107317933}
     - target: {fileID: 3969398151418961971, guid: caa6800791b6a7345a7f0bce4ae01e59,
         type: 3}
+      propertyPath: webcamLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969398151418961971, guid: caa6800791b6a7345a7f0bce4ae01e59,
+        type: 3}
       propertyPath: xrCameras.Array.data[0]
       value: 
       objectReference: {fileID: 1107317943}
@@ -15469,6 +15498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xrCameras.Array.data[3]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969398151418961971, guid: caa6800791b6a7345a7f0bce4ae01e59,
+        type: 3}
+      propertyPath: mixedRealityOnLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4443995837971442525, guid: caa6800791b6a7345a7f0bce4ae01e59,
         type: 3}
