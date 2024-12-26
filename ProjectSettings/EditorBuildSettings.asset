@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/webxr-test/ARShooting.unity
+    path: Assets/ARShooting/ARShooting.unity
     guid: 153df2b1357af0b449034b55616aaafd
   m_configObjects:
     WebXR.Settings: {fileID: 11400000, guid: fa199e5856f49c447969733948495629, type: 2}

@@ -6,7 +6,13 @@ public class TargetBehaviour : MonoBehaviour
     [SerializeField] private int score = 10;
     
     //スコアのオブジェクト
-    [SerializeField] private ScoreBehaviour scoreBehaviour;
+    private ScoreBehaviour _scoreBehaviour;
+    
+    //シーン内からScoreBehaviourを探してくる
+    private void Start()
+    {
+        _scoreBehaviour = FindObjectOfType<ScoreBehaviour>();
+    }
     
     //BulletBehaviourがコライダーに触れたらスコアを加算する
     private void OnTriggerEnter(Collider other)
@@ -14,7 +20,7 @@ public class TargetBehaviour : MonoBehaviour
         if (other.gameObject.TryGetComponent<BulletBehaviour>(out var bulletBehaviour))
         {
             //スコアを加算する
-            scoreBehaviour.AddScore(score);
+            _scoreBehaviour.AddScore(score);
             
             //ターゲットを削除する
             Destroy(gameObject);
