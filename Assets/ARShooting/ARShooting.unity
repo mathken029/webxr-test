@@ -791,7 +791,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OnSwitchedToAR:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2088174168}
+        m_TargetAssemblyTypeName: TimerBehaviour, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1919070552}
+        m_TargetAssemblyTypeName: webxr_test.Scripts.ARShooting.EnemySpawnerBehaviour,
+          Assembly-CSharp
+        m_MethodName: StartSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 664071325}
+        m_TargetAssemblyTypeName: ScoreBehaviour, Assembly-CSharp
+        m_MethodName: StartRecording
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSwitchedFromAR:
     m_PersistentCalls:
       m_Calls: []
@@ -3800,7 +3837,10 @@ MonoBehaviour:
     type: 3}
   spawnInterval: 1
   spawnIntervalLast: 0.5
-  spawnDistance: 5
+  spawnDistanceMin: 4
+  spawnDistanceMax: 6
+  spawnHeightMin: -1
+  spawnHeightMax: 1
 --- !u!1 &2005427645
 GameObject:
   m_ObjectHideFlags: 0

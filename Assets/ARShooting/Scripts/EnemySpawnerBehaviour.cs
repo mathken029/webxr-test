@@ -26,6 +26,15 @@ namespace webxr_test.Scripts.ARShooting
         {
             _playerBehaviour = FindObjectOfType<PlayerBehaviour>();
             
+            //UnityEditor上で実行している場合は敵の生成を開始する
+            if (Application.isEditor)
+            {
+                StartSpawn();
+            }
+        }
+        
+        public void StartSpawn()
+        {
             InvokeRepeating(nameof(SpawnEnemy), 0, spawnInterval);
         }
         

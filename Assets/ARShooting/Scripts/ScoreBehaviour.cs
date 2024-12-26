@@ -9,11 +9,20 @@ public class ScoreBehaviour : MonoBehaviour
     
     //スコア
     private float score = 0;
+    
+    //スコアの記録を開始するフラグ
+    private bool _isRecording = false;
 
     private void Start()
     {
         //コンポーネント内のTMPro.TextMeshProUGUIを取得する
         _scoreText = GetComponent<TMPro.TextMeshProUGUI>();
+        
+        //UnityEditor上で実行している場合はスコアの記録を開始する
+        if (Application.isEditor)
+        {
+            StartRecording();
+        }
     }
     
     private void Update()
@@ -22,15 +31,35 @@ public class ScoreBehaviour : MonoBehaviour
         _scoreText.text = $"Score: {score:F1}";
     }
 
+    //スコアの記録を開始するフラグをオンにする
+    public void StartRecording()
+    {
+        _isRecording = true;
+    }
+    
+    //スコアの記録を停止するフラグをオフにする
+    public void StopRecording()
+    {
+        _isRecording = false;
+    }
+    
     //スコアを加算する
     public void AddScore(float point)
     {
-        score += point;
+        //スコアの記録を開始している場合のみスコアを加算する
+        if (_isRecording)
+        {
+            score += point;
+        }
     }
     
     //スコアを減らす
     public void SubScore(float point)
     {
-        score -= point;
+        //スコアの記録を開始している場合のみスコアを減らす
+        if (_isRecording)
+        {
+            score -= point;
+        }
     }
 }
