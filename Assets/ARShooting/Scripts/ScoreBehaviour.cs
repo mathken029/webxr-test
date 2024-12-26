@@ -28,6 +28,12 @@ public class ScoreBehaviour : MonoBehaviour
         score += point;
     }
     
+    //スコアを減らす
+    public void SubScore(int point)
+    {
+        score -= point;
+    }
+    
     //スコアを取得する
     public int GetScore()
     {

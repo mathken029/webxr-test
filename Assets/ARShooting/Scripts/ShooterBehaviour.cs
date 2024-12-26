@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ShooterBehaviour : MonoBehaviour
 {
@@ -7,7 +8,19 @@ public class ShooterBehaviour : MonoBehaviour
 
     //弾の発射速度
     [SerializeField] private float shootSpeed = 1000f;
+    
+    //弾を撃つたびに減るスコア
+    [SerializeField] private int shootSubScore = 1;
 
+    //スコアのオブジェクト
+    private ScoreBehaviour _scoreBehaviour;
+    
+    //シーン内からScoreBehaviourを探してくる
+    private void Start()
+    {
+        _scoreBehaviour = FindObjectOfType<ScoreBehaviour>();
+    }
+    
     //プレイヤーが画面をタッチしたらタッチした位置から弾を発射する
     private void Update()
     {
@@ -32,6 +45,9 @@ public class ShooterBehaviour : MonoBehaviour
                 //Rayが当たらなかった場合、Rayの方向に弾を発射する
                 bullet.GetComponent<Rigidbody>().AddForce(ray.direction * shootSpeed);
             }
+            
+            //弾を発射したらスコアを減らす
+            _scoreBehaviour.SubScore(shootSubScore);
         }
     }
 }
