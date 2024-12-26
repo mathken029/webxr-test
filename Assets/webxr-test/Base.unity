@@ -3070,6 +3070,11 @@ PrefabInstance:
       objectReference: {fileID: 1302711619}
     - target: {fileID: 8721391137991888646, guid: bc536673dd409e046b5e4162fa3e6359,
         type: 3}
+      propertyPath: webcamLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721391137991888646, guid: bc536673dd409e046b5e4162fa3e6359,
+        type: 3}
       propertyPath: xrCameras.Array.data[0]
       value: 
       objectReference: {fileID: 1636910331}
@@ -3087,6 +3092,26 @@ PrefabInstance:
         type: 3}
       propertyPath: xrCameras.Array.data[3]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721391137991888646, guid: bc536673dd409e046b5e4162fa3e6359,
+        type: 3}
+      propertyPath: leftTrigger.m_Action.m_Name
+      value: Left Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721391137991888646, guid: bc536673dd409e046b5e4162fa3e6359,
+        type: 3}
+      propertyPath: mixedRealityOnLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721391137991888646, guid: bc536673dd409e046b5e4162fa3e6359,
+        type: 3}
+      propertyPath: rightTrigger.m_Action.m_Name
+      value: Right Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721391137991888646, guid: bc536673dd409e046b5e4162fa3e6359,
+        type: 3}
+      propertyPath: rightPosition.m_Action.m_Name
+      value: Right Position
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4282,6 +4307,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096634860}
   m_CullTransparentMesh: 0
+--- !u!1 &1116106746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1854678450583440, guid: 54a613ba6e982e84db04156af08d6a89,
+    type: 3}
+  m_PrefabInstance: {fileID: 1302711618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1119766361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,7 +5041,7 @@ MonoBehaviour:
   leftTrigger:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Left Trigger
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 90842ec6-208d-4346-af3a-9cd6b00c3165
@@ -5022,7 +5053,7 @@ MonoBehaviour:
   rightTrigger:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Right Trigger
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: f3606b72-4bfd-4150-98f7-940af11f77ed
@@ -5034,7 +5065,7 @@ MonoBehaviour:
   click:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Click
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: de5ebb32-8849-4e12-9d02-6f1b47a30703
@@ -5285,17 +5316,17 @@ PrefabInstance:
     - target: {fileID: 2469175894405336353, guid: 54a613ba6e982e84db04156af08d6a89,
         type: 3}
       propertyPath: m_arCullingMask.m_Bits
-      value: 55
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2469175894405336353, guid: 54a613ba6e982e84db04156af08d6a89,
         type: 3}
       propertyPath: m_vrCullingMask.m_Bits
-      value: 98359
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2469175894405336353, guid: 54a613ba6e982e84db04156af08d6a89,
         type: 3}
       propertyPath: m_normalCullingMask.m_Bits
-      value: 98359
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3431978019681743018, guid: 54a613ba6e982e84db04156af08d6a89,
         type: 3}
@@ -5314,7 +5345,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1241030032}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1854678450583440, guid: 54a613ba6e982e84db04156af08d6a89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1636910335}
   m_SourcePrefab: {fileID: 100100000, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
 --- !u!114 &1302711619 stripped
 MonoBehaviour:
@@ -6844,6 +6879,50 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1302711618}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1636910335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116106746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1694373858
 GameObject:
   m_ObjectHideFlags: 0
