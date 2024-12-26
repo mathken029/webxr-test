@@ -1,34 +1,48 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace webxr_test.Scripts.ARShooting
 {
     public class EnemySpawnerBehaviour : MonoBehaviour
     {
-        //生成するターゲットのプレハブ
-        [SerializeField] private GameObject targetPrefab;
+        //生成する敵のプレハブ
+        [SerializeField] private GameObject enemyPrefab;
         
-        //ターゲットを生成する間隔
+        //敵を生成する間隔
         [SerializeField] private float spawnInterval = 1f;
         [SerializeField] private float spawnIntervalLast = 0.5f;
         
+        //敵を生成する距離
+        [SerializeField] private float spawnDistanceMin = 4f;
+        [SerializeField] private float spawnDistanceMax = 6f;
+        
+        //敵を生成する高さ
+        [SerializeField] private float spawnHeightMin = -1f;
+        [SerializeField] private float spawnHeightMax = 1f;
+        
         private PlayerBehaviour _playerBehaviour;
         
-        //プレイヤーの正面のランダムな座標に敵を生成する
         private void Start()
         {
             _playerBehaviour = FindObjectOfType<PlayerBehaviour>();
             
-            InvokeRepeating(nameof(SpawnTarget), 0, spawnInterval);
+            InvokeRepeating(nameof(SpawnEnemy), 0, spawnInterval);
         }
         
-        //ターゲットを生成する
-        private void SpawnTarget()
+        //設定した距離離れた位置で、上下左右の座標をランダムに敵を生成する
+        private void SpawnEnemy()
         {
             var playerTransform = _playerBehaviour.transform;
             var playerPosition = playerTransform.position;
             var playerForward = playerTransform.forward;
-            var randomPosition = playerPosition + playerForward * Random.Range(1f, 3f);
-            Instantiate(targetPrefab, randomPosition, Quaternion.identity);
+            
+            //プレイヤーの前方にランダムな距離だけ敵を生成する
+            var randomPosition = playerPosition + playerForward * Random.Range(spawnDistanceMin, spawnDistanceMax);
+            
+            //上下もランダムにする
+            randomPosition += playerTransform.up * Random.Range(spawnHeightMin, spawnHeightMax);
+            
+            Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
         }
     }
 }
