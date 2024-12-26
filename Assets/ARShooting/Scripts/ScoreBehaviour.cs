@@ -8,7 +8,7 @@ public class ScoreBehaviour : MonoBehaviour
     private TMPro.TextMeshProUGUI _scoreText;
     
     //スコア
-    private int score = 0;
+    private float score = 0;
 
     private void Start()
     {
@@ -18,31 +18,19 @@ public class ScoreBehaviour : MonoBehaviour
     
     private void Update()
     {
-        //スコアを表示する
-        _scoreText.text = $"Score: {score}";
+        //小数点第一位までのスコアを表示する
+        _scoreText.text = $"Score: {score:F1}";
     }
 
     //スコアを加算する
-    public void AddScore(int point)
+    public void AddScore(float point)
     {
         score += point;
     }
     
     //スコアを減らす
-    public void SubScore(int point)
+    public void SubScore(float point)
     {
         score -= point;
-    }
-    
-    //スコアを取得する
-    public int GetScore()
-    {
-        return score;
-    }
-    
-    //スコアをリセットする
-    public void ResetScore()
-    {
-        score = 0;
     }
 }
