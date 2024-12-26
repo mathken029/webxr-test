@@ -32,8 +32,9 @@ public class ShooterBehaviour : MonoBehaviour
             //タッチした位置からRayを飛ばす
             var ray = Camera.main.ScreenPointToRay(touchPosition);
 
-            //弾を発射する
+            //弾を生成してPlayerBulletBehaviourをアタッチする
             var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet.AddComponent<PlayerBulletBehaviour>();
 
             //Rayが当たった位置に向かって弾を発射する
             if (Physics.Raycast(ray, out var hit))
