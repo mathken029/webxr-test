@@ -1,6 +1,13 @@
+# ライブラリ
+"unityroom-client-library" https://github.com/naichilab/unityroom-client-library
+
+# モデル
 "UFO" (https://skfb.ly/6WN7o) by Graphfun is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 "Small laser beam" (https://skfb.ly/6VIsE) by dolando is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
+
+# フォント
 "Noto Sans Japanese" (https://fonts.google.com/noto/specimen/Noto+Sans+JP)
 
-"unityroom-client-library" https://github.com/naichilab/unityroom-client-library
+# 効果音
+https://otologic.jp/

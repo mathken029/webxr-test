@@ -8,7 +8,7 @@ public class EnemyBulletBehaviour : BulletBehaviourBase
     {
         if (other.gameObject.TryGetComponent<PlayerBehaviour>(out var playerBehaviour))
         {
-            Destroy(gameObject);
+            Hit(other);
         }
     }
 }

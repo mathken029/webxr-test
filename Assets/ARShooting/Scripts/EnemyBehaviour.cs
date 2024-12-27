@@ -33,9 +33,8 @@ public class EnemyBehaviour : MonoBehaviour
         //プレイヤーの位置を取得する
         var playerPosition = _playerBehaviour.transform.position;
         
-        //弾を90度回転して生成してEnemyBulletBehaviourをアタッチする
+        //弾を生成する
         var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.AddComponent<EnemyBulletBehaviour>();
         
         //プレイヤーに向かってゆっくりと重力の影響を受けずにまっすぐに飛ぶ弾を打つ
         bullet.GetComponent<Rigidbody>().AddForce((playerPosition - transform.position).normalized * bulletSpeed);

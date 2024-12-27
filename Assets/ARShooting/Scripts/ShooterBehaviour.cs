@@ -11,6 +11,12 @@ public class ShooterBehaviour : MonoBehaviour
     
     //弾を撃つたびに減るスコア
     [SerializeField] private int shootSubScore = 1;
+    
+    //弾を撃つときの効果音
+    [SerializeField] private AudioClip shootSound;
+    
+    //弾を撃つときの効果音の音量
+    [SerializeField] private float shootSoundVolume = 1f;
 
     //スコアのオブジェクト
     private ScoreBehaviour _scoreBehaviour;
@@ -34,7 +40,6 @@ public class ShooterBehaviour : MonoBehaviour
 
             //弾をRayの方向に向けて生成してPlayerBulletBehaviourをアタッチする
             var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.AddComponent<PlayerBulletBehaviour>();
 
             //Rayが当たった位置に向かって弾を発射する
             if (Physics.Raycast(ray, out var hit))
@@ -46,6 +51,9 @@ public class ShooterBehaviour : MonoBehaviour
                 //Rayが当たらなかった場合、Rayの方向に弾を発射する
                 bullet.GetComponent<Rigidbody>().AddForce(ray.direction * shootSpeed);
             }
+            
+            //効果音を再生する
+            AudioSource.PlayClipAtPoint(shootSound, transform.position, shootSoundVolume);
             
             //弾を発射したらスコアを減らす
             _scoreBehaviour.SubScore(shootSubScore);

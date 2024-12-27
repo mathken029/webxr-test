@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -6689036041284674117, guid: 60356df219a489e49ac9c9cc8edd8762,
         type: 3}
       propertyPath: m_Name
-      value: small_laser_beam
+      value: small_laser_beam(enemy)
       objectReference: {fileID: 0}
     - target: {fileID: -3448767025054970594, guid: 60356df219a489e49ac9c9cc8edd8762,
         type: 3}
@@ -125,6 +125,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6953171515455429589}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 60356df219a489e49ac9c9cc8edd8762,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8965567386220516329}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 60356df219a489e49ac9c9cc8edd8762,
     type: 3}
 --- !u!1 &1728584858220929827 stripped
@@ -183,3 +187,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8965567386220516329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728584858220929827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04746f1485de4c7caa9d879cf1a28d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 20
+  damageSound: {fileID: 8300000, guid: 53dd45fc530e4594fb9ba2e6fc257b7d, type: 3}
+  damageSoundVolume: 1
