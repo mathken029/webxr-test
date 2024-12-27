@@ -1,6 +1,6 @@
 using UnityEngine;
 using webxr_test.Scripts.ARShooting;
-
+[RequireComponent(typeof(ParticleSystem))]
 public class EnemyBehaviour : MonoBehaviour
 {
     //プレイヤーに向かって弾を撃つ間隔
@@ -17,11 +17,15 @@ public class EnemyBehaviour : MonoBehaviour
     
     private ScoreBehaviour _scoreBehaviour;
     private PlayerBehaviour _playerBehaviour;
+    private ParticleSystem _particleSystem;
     
     private void Start()
     {
         _scoreBehaviour = FindObjectOfType<ScoreBehaviour>();
         _playerBehaviour = FindObjectOfType<PlayerBehaviour>();
+        
+        //パーティクルシステムを取得する
+        _particleSystem = GetComponent<ParticleSystem>();
         
         //プレイヤーに向かって弾を撃つ
         InvokeRepeating(nameof(Shoot), 0, shootInterval);
@@ -45,14 +49,20 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<PlayerBulletBehaviour>(out var bulletBehaviour))
         {
+            //パーティクルを再生する
+            _particleSystem.Play();
+            
+            //当たり判定を消す
+            GetComponent<Collider>().enabled = false;
+            
             //プレイヤーとの距離を取得する
             var distance = Vector3.Distance(transform.position, _playerBehaviour.transform.position);
             
             //距離が離れているほど高いスコアを加算する
             _scoreBehaviour.AddScore(scoreNumerator / distance);
             
-            //ターゲットを削除する
-            Destroy(gameObject);
+            //パーティクルを再生し終わってから消滅する
+            Destroy(gameObject, _particleSystem.main.duration);
         }
     }
 }
