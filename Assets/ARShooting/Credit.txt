@@ -2,3 +2,5 @@
 "Small laser beam" (https://skfb.ly/6VIsE) by dolando is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 "Noto Sans Japanese" (https://fonts.google.com/noto/specimen/Noto+Sans+JP)
+
+"unityroom-client-library" https://github.com/naichilab/unityroom-client-library
