@@ -122,3 +122,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3344958764024278250, guid: 36a1303a65603164e86cdd57319de15c,
     type: 3}
   bulletSpeed: 50
+  scoreNumerator: 50

@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3344958764024278250, guid: 36a1303a65603164e86cdd57319de15c,
     type: 3}
-  shootSpeed: 1000
+  shootSpeed: 500
   shootSubScore: 1
 --- !u!114 &1636910336
 MonoBehaviour:

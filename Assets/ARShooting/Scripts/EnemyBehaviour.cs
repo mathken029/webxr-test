@@ -12,6 +12,9 @@ public class EnemyBehaviour : MonoBehaviour
     //弾の速度
     [SerializeField] private float bulletSpeed = 1000f;
     
+    //スコアの分子
+    [SerializeField] private float scoreNumerator = 50;
+    
     private ScoreBehaviour _scoreBehaviour;
     private PlayerBehaviour _playerBehaviour;
     
@@ -46,8 +49,8 @@ public class EnemyBehaviour : MonoBehaviour
             //プレイヤーとの距離を取得する
             var distance = Vector3.Distance(transform.position, _playerBehaviour.transform.position);
             
-            //距離をスコアとして加算する
-            _scoreBehaviour.AddScore(distance);
+            //距離が離れているほど高いスコアを加算する
+            _scoreBehaviour.AddScore(scoreNumerator / distance);
             
             //ターゲットを削除する
             Destroy(gameObject);
