@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using unityroom.Api;
 using webxr_test.Scripts.ARShooting;
 
 [RequireComponent(typeof(TMPro.TextMeshProUGUI))]
@@ -9,10 +10,9 @@ public class TimerBehaviour : MonoBehaviour
     [SerializeField] private float maxTime = 60f;
     [SerializeField] Button retryButton;
     
-    //制限時間を表示するUI
     private TMPro.TextMeshProUGUI _timeText;
-    
     private EnemySpawnerBehaviour _enemySpawnerBehaviour;
+    private ScoreBehaviour _scoreBehaviour;
 
     
     private void Start()
@@ -21,8 +21,9 @@ public class TimerBehaviour : MonoBehaviour
         _timeText = GetComponent<TMPro.TextMeshProUGUI>();
         DisplayTime(maxTime);
         
-        //EnemySpawnerBehaviourのクラスを取得する
+        //必要なクラスを取得する
         _enemySpawnerBehaviour = FindObjectOfType<EnemySpawnerBehaviour>();
+        _scoreBehaviour = FindObjectOfType<ScoreBehaviour>();
         
         //UnityEditor上で実行している場合はタイマーをスタートする
         if (Application.isEditor)
@@ -69,6 +70,9 @@ public class TimerBehaviour : MonoBehaviour
         
         //敵の生成を停止する
         _enemySpawnerBehaviour.StopSpawn();
+        
+        //スコアをランキングに送信する
+        UnityroomApiClient.Instance.SendScore(1, _scoreBehaviour.GetScore(), ScoreboardWriteMode.HighScoreDesc);
         
         //リトライボタンを表示する
         retryButton.gameObject.SetActive(true);

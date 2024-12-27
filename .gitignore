@@ -75,3 +75,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]amples/*
 !/[Aa]ssets/[Ss]amples/WebXR Interactions/
 !/[Aa]ssets/[Ss]amples/WebXR Interactions.meta
+
+# Key information
+/[Aa]ssets/Editor/hmackey.txt
+/[Aa]ssets/Editor/hmackey.txt.meta

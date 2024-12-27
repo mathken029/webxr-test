@@ -68,4 +68,10 @@ public class ScoreBehaviour : MonoBehaviour
     {
         score = 0;
     }
+    
+    //スコアを取得する
+    public float GetScore()
+    {
+        return score;
+    }
 }
