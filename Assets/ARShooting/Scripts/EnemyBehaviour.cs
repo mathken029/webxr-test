@@ -33,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
         //プレイヤーの位置を取得する
         var playerPosition = _playerBehaviour.transform.position;
         
-        //弾を生成してEnemyBulletBehaviourをアタッチする
+        //弾を90度回転して生成してEnemyBulletBehaviourをアタッチする
         var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.AddComponent<EnemyBulletBehaviour>();
         

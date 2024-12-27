@@ -1,0 +1,11 @@
+Model Information:
+* title:	Small laser beam
+* source:	https://sketchfab.com/3d-models/small-laser-beam-3dee2bcf68434ac9a9767ab7d6c9e30c
+* author:	dolando (https://sketchfab.com/dolando)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Small laser beam" (https://sketchfab.com/3d-models/small-laser-beam-3dee2bcf68434ac9a9767ab7d6c9e30c) by dolando (https://sketchfab.com/dolando) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
