@@ -38,6 +38,11 @@ namespace webxr_test.Scripts.ARShooting
             InvokeRepeating(nameof(SpawnEnemy), 0, spawnInterval);
         }
         
+        public void StopSpawn()
+        {
+            CancelInvoke(nameof(SpawnEnemy));
+        }
+        
         //設定した距離離れた位置で、上下左右の座標をランダムに敵を生成する
         private void SpawnEnemy()
         {

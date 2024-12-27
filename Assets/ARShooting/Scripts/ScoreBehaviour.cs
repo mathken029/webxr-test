@@ -62,4 +62,10 @@ public class ScoreBehaviour : MonoBehaviour
             score -= point;
         }
     }
+    
+    //スコアをリセットする
+    public void ResetScore()
+    {
+        score = 0;
+    }
 }
