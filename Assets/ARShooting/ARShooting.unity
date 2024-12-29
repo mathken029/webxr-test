@@ -4737,10 +4737,13 @@ MonoBehaviour:
     type: 3}
   spawnInterval: 1
   spawnIntervalLast: 0.5
-  spawnDistanceMin: 2
-  spawnDistanceMax: 3
-  spawnHeightMin: -0.1
-  spawnHeightMax: 0.5
+  spawnDistance: 5
+  spawnRandomXMin: -1.5
+  spawnRandomXMax: 1.5
+  spawnRandomYMin: -0.5
+  spawnRandomYMax: 0.5
+  spawnRandomZMin: -2
+  spawnRandomZMax: 2
 --- !u!1 &2005427645
 GameObject:
   m_ObjectHideFlags: 0
