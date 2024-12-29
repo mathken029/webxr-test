@@ -4219,7 +4219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a50bf99068413a9bcd13a77c06557f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
 --- !u!65 &1636910341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4738,10 +4737,10 @@ MonoBehaviour:
     type: 3}
   spawnInterval: 1
   spawnIntervalLast: 0.5
-  spawnDistanceMin: 4
-  spawnDistanceMax: 6
-  spawnHeightMin: -1
-  spawnHeightMax: 1
+  spawnDistanceMin: 2
+  spawnDistanceMax: 3
+  spawnHeightMin: -0.1
+  spawnHeightMax: 0.5
 --- !u!1 &2005427645
 GameObject:
   m_ObjectHideFlags: 0

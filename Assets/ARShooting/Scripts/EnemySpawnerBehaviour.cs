@@ -22,9 +22,15 @@ namespace webxr_test.Scripts.ARShooting
         
         private PlayerBehaviour _playerBehaviour;
         
+        //プレイヤーの最初の位置のtransform
+        private Vector3 _playerStartPosition;
+        
         private void Start()
         {
             _playerBehaviour = FindObjectOfType<PlayerBehaviour>();
+            
+            //プレイヤーの最初の位置を保存
+            _playerStartPosition = _playerBehaviour.transform.position;
             
             //UnityEditor上で実行している場合は敵の生成を開始する
             if (Application.isEditor)
@@ -43,15 +49,13 @@ namespace webxr_test.Scripts.ARShooting
             CancelInvoke(nameof(SpawnEnemy));
         }
         
-        //設定した距離離れた位置で、上下左右の座標をランダムに敵を生成する
+        //プレイヤーの初期位置から離れた位置で、上下左右の座標をランダムに敵を生成する
         private void SpawnEnemy()
         {
             var playerTransform = _playerBehaviour.transform;
-            var playerPosition = playerTransform.position;
-            var playerForward = playerTransform.forward;
             
-            //プレイヤーの前方にランダムな距離だけ敵を生成する
-            var randomPosition = playerPosition + playerForward * Random.Range(spawnDistanceMin, spawnDistanceMax);
+            //プレイヤーの初期位置から離れた位置で敵を生成する
+            var randomPosition = _playerStartPosition + playerTransform.forward * Random.Range(spawnDistanceMin, spawnDistanceMax);
             
             //上下もランダムにする
             randomPosition += playerTransform.up * Random.Range(spawnHeightMin, spawnHeightMax);
