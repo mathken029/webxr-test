@@ -1,3 +1,16 @@
+Assets フォルダ配下の以下のフォルダ配下は Unity のライセンスとなります https://unity3d.com/legal/licenses/Unity_Companion_License
+・Samples
+・Settings
+・TextMesh Pro
+・TutorialInfo
+・XR
+・XRI
+
+Assets フォルダ配下の以下のフォルダ配下は、それぞれフォルダ内のライセンスに準じます
+・unityroom
+
+## 上記以外は以下の Apache License となります
+
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/

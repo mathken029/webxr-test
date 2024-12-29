@@ -71,11 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Ignore Unity Sample Asset because of Unity License
-/[Aa]ssets/[Ss]amples/*
-!/[Aa]ssets/[Ss]amples/WebXR Interactions/
-!/[Aa]ssets/[Ss]amples/WebXR Interactions.meta
-
 # Key information
 /[Aa]ssets/Editor/hmackey.txt
 /[Aa]ssets/Editor/hmackey.txt.meta
